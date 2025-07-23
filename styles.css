@@ -1,0 +1,48 @@
+body {
+    background-image: url('images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    margin: 0;
+    
+}
+
+.maintitle {
+    width: 85vw;;
+    margin: auto;
+    text-align: center;
+}
+
+.maintitle h1 {
+    font-size: 3rem;
+    color: white;
+    
+}
+
+.maintitle p {
+    color: white;
+    font-size: 2rem;
+    display: none;
+}
+
+#game-board {
+    margin: auto;
+
+    aspect-ratio: 1 / 1;
+    width: 85vw;
+    height: auto;
+    border: 2px solid white;
+    /* grid */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    
+}
+
+.cell {
+    background-color: rgba(0, 17, 255, 0);
+    border: 2px rgb(255, 255, 255) solid;
+}
+
+
