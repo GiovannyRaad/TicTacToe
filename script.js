@@ -9,9 +9,10 @@ cells.forEach(cell => {
     cell.addEventListener("click", handleClick);
 });
 
-function resetFlicker(){
+function resetFlicker(){ /* stops the flicker animation of the previous cell */
     if (prev_cell){
-        prev_cell.querySelector("span").classList.remove("flicker");
+        prev_cell.querySelector("span").classList.remove("flickerX");
+        prev_cell.querySelector("span").classList.remove("flickerO");
     }
 }
 function handleClick(event){
@@ -31,8 +32,12 @@ function draw(cell, turn){
     const span = cell.querySelector("span"); /* gets the X or 0 inside the cell */
     if (turn == 1) {
         span.textContent = "X";
+        span.classList.add("x"); /* for the color */
+        span.classList.add("flickerX"); /* for the animation */
     } else if (turn == 0) {
         span.textContent = "O";
+        span.classList.add("o");
+        span.classList.add("flickerO");
     } else {
         alert("Game turn error, try to reload the page");
         return;
@@ -40,6 +45,6 @@ function draw(cell, turn){
 
     span.style.opacity = 100;
     span.style.fontSize = "1em";
-    span.classList.add("flicker");
+    
 
 }
