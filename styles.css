@@ -57,23 +57,39 @@ body {
     font-size: 0em; /* default 6 rem */
     font-weight: 350;
     color: rgb(255, 255, 255);
-    text-shadow:
-        0 0 10px rgb(255, 93, 93),
-        0 0 20px rgb(255, 49, 49),
-        0 0 40px rgb(255, 0, 0),
-        0 0 80px rgb(255, 0, 0),
-        0 0 100px rgb(161, 0, 0);
 
     transition: all 0.2s ease-in-out;
     
     
 }
 
-.flicker {
-    animation: neonFlicker 5s infinite;
+.o {
+    text-shadow:
+        0 0 10px rgb(255, 93, 93),
+        0 0 20px rgb(255, 49, 49),
+        0 0 40px rgb(255, 0, 0),
+        0 0 80px rgb(255, 0, 0),
+        0 0 100px rgb(161, 0, 0);
 }
 
-@keyframes neonFlicker {
+.x {
+    text-shadow:
+        0 0 10px rgb(141, 115, 255),
+        0 0 20px rgb(101, 66, 255),
+        0 0 40px rgb(73, 32, 255),
+        0 0 80px rgb(47, 0, 255),
+        0 0 100px rgb(36, 0, 194);
+}
+
+.flickerX {
+   animation: neonFlickerX 5s infinite; 
+}
+
+.flickerO {
+   animation: neonFlickerO 5s infinite; 
+}
+
+@keyframes neonFlickerO {
   0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
     opacity: 1;
     text-shadow: 
@@ -82,6 +98,22 @@ body {
         0 0 40px rgb(255, 0, 0),
         0 0 80px rgb(255, 0, 0),
         0 0 100px rgb(161, 0, 0);
+  }
+  20%, 22%, 24%, 55% {
+    opacity: 0.3;
+    text-shadow: none;
+  }
+}
+
+@keyframes neonFlickerX {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+    text-shadow: 
+        0 0 10px rgb(141, 115, 255),
+        0 0 20px rgb(101, 66, 255),
+        0 0 40px rgb(73, 32, 255),
+        0 0 80px rgb(47, 0, 255),
+        0 0 100px rgb(36, 0, 194);
   }
   20%, 22%, 24%, 55% {
     opacity: 0.3;
