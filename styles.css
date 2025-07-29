@@ -41,8 +41,26 @@ body {
 }
 
 .cell {
+    aspect-ratio: 1 / 1;
     background-color: rgba(0, 17, 255, 0);
     border: 2px rgb(255, 255, 255) solid;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    overflow: hidden;
 }
 
+.cell.neon span {
+    display: none;
+    font-family: 'Roboto', sans-serif;
+    font-size: 5rem;
+    font-weight: 200;
+    color: rgb(255, 255, 255);
+    text-shadow:
+        0 0 10px rgb(255, 93, 93),
+        0 0 20px rgb(255, 49, 49),
+        0 0 40px rgb(255, 0, 0),
+        0 0 80px rgb(255, 0, 0),
+        0 0 100px rgb(161, 0, 0);
+}
 
