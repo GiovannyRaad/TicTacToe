@@ -16,11 +16,11 @@ function resetFlicker(){ /* stops the flicker animation of the previous cell */
     }
 }
 function handleClick(event){
-    resetFlicker();
     const cell = event.target; /* actual dom element */
-    prev_cell = cell;
     const index = cell.dataset.index; /* gets value of data-index */
     if (grid[index] == 9){
+        resetFlicker();
+        prev_cell = cell;
         grid[index] = turn;
         draw(cell, turn);
         turn = (turn + 1) % 2;
