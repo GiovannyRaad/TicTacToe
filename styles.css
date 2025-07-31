@@ -9,14 +9,24 @@ body {
 }
 
 .maintitle {
-    width: 85vw;;
-    margin: auto;
+    max-width: 85vw;;
+
     text-align: center;
+    margin: auto;
+    
+    user-select: none;
 }
 
 .maintitle h1 {
-    font-size: 3rem;
-    color: white;
+    font-size: 4rem;
+
+    font-family: "Vibur";
+    font-weight: 400;
+    color: #fee;
+    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff8f44, 
+    0 0 0.5em #f78031, 
+    0 0 0.1em #ff6600, 
+    0 10px 3px #000;
     
 }
 
