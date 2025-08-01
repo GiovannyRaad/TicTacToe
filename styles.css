@@ -20,7 +20,7 @@ body {
 .maintitle h1 {
     font-size: 4rem;
 
-    font-family: "Vibur";
+    font-family: "Vibur", Arial, Helvetica, sans-serif;
     font-weight: 400;
     color: #fee;
     text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff8f44, 
@@ -37,7 +37,9 @@ body {
 }
 
 #game-board {
+    position: relative;
     margin: auto;
+    overflow: hidden;
 
     aspect-ratio: 1 / 1;
     width: 85vw;
@@ -48,6 +50,34 @@ body {
     grid-template-columns: repeat(3, 1fr);
     grid-template-columns: repeat(3, 1fr);
     
+}
+
+.line {
+  position: absolute;
+  height: 0%;
+  background-color: rgba(255, 234, 234, 0.9);
+  border-radius: 4px;
+  width: 2%;
+
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: auto;
+  
+  
+
+  transform-origin: center center;
+  transition: height 0.5s ease;
+  
+  box-shadow: 0 0 10px rgba(150, 109, 255, 0.8),
+0 0 20px rgba(108, 63, 255, 0.6),
+0 0 40px rgba(140, 17, 255, 0.4),
+0 0 80px rgba(98, 0, 255, 0.3),
+0 0 100px rgba(100, 70, 255, 0.2);
+
+
+  
 }
 
 .cell {
