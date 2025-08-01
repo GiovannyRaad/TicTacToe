@@ -6,6 +6,8 @@ body {
     height: 100vh;
     margin: 0;
     overflow: hidden;
+    width: 100%;
+    position: fixed;
 }
 
 .maintitle {
