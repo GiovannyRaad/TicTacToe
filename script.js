@@ -4,6 +4,7 @@ let winner;
 let running = true;
 
 const cells = document.querySelectorAll(".cell");
+const winScreen = document.querySelector(".winScreen");
 const winCon = [
   [0, 1, 2],
   [0, 3, 6],
@@ -73,13 +74,17 @@ function winCheck(){
         if (result == 0){
             winner = 0;
             drawWinLine(pattern);
-            endGame();
+            endGame(winner);
         } else if (result == 3){
             winner = 1;
             drawWinLine(pattern);
-            endGame();
+            endGame(winner);
         }
         pattern++;
+    }
+    if (!grid.includes(9)){
+        winner = 2;
+        endGame(winner);
     }
 }
 
@@ -131,8 +136,26 @@ function drawWinLine(pattern){ /* change rotation and location of line */
     }
 }
 
-function endGame(){
+function endGame(win){
+    const winText = document.getElementById('winText');
     cells.forEach(cell => {
         cell.removeEventListener("click", handleClick);
     });
+
+    switch (win) {
+        case 0:
+            winText.textContent = "0 WINS";
+            winText.classList.add("redNeon");
+            break;
+
+        case 1:
+            winText.textContent = "X WINS";
+            winText.classList.add("blueNeon");
+            break;
+
+        case 2:
+            winText.textContent = "DRAW";
+            winText.classList.add("greenNeon");
+    }
+    winScreen.style.transform = 'translate(-50%, -50%) scaleX(1)';
 }
