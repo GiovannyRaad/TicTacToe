@@ -229,6 +229,8 @@ body {
   0 0 0.5em #1e90ff,
   0 0 0.1em #007fff,
   0 5px 3px #000;
+
+  animation: neonFlickerBlue 5s infinite;
 }
 
 .redNeon {
@@ -239,6 +241,8 @@ body {
   0 0 0.5em #e60000,
   0 0 0.1em #cc0000,
   0 5px 3px #000000;
+
+  animation: neonFlickerRed 5s infinite;
 
 }
 
@@ -251,14 +255,16 @@ body {
   0 0 0.1em #009900,
   0 5px 3px #000000;
 
+  animation: neonFlickerRed 7s infinite;
+
 }
 
 .flickerX {
-  animation: neonFlickerX 5s infinite; 
+  animation: neonFlickerX 7s infinite; 
 }
 
 .flickerO {
-  animation: neonFlickerO 5s infinite; 
+  animation: neonFlickerO 7s infinite; 
 }
 
 @keyframes neonFlickerO {
@@ -290,7 +296,57 @@ body {
   20%, 22%, 24%, 55% {
     opacity: 0.3;
     text-shadow: none;
+  } 
+}
+
+@keyframes neonFlickerRed {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+    text-shadow: 
+      0 -40px 100px,
+      0 0 2px,
+      0 0 1em #ff1a1a,
+      0 0 0.5em #e60000,
+      0 0 0.1em #cc0000,
+      0 5px 3px #000000;
+  }
+  20%, 22%, 24%, 55% {
+    opacity: 0.3;
+    text-shadow: none;
   }
 }
 
+@keyframes neonFlickerBlue {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+    text-shadow: 
+      0 -40px 100px,
+      0 0 2px,
+      0 0 1em #3a80ff,
+      0 0 0.5em #1e90ff,
+      0 0 0.1em #007fff,
+      0 5px 3px #000;
+  }
+  20%, 22%, 24%, 55% {
+    opacity: 0.3;
+    text-shadow: none;
+  }
+}
+
+@keyframes neonFlickerGreen {
+  0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+    opacity: 1;
+    text-shadow: 
+      0 -40px 100px,
+      0 0 2px,
+      0 0 1em #39ff14,
+      0 0 0.5em #00cc00,
+      0 0 0.1em #009900,
+      0 5px 3px #000000;
+  }
+  20%, 22%, 24%, 55% {
+    opacity: 0.3;
+    text-shadow: none;
+  }
+}
 
