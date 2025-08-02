@@ -61,8 +61,10 @@ body {
   border-radius: 15px;;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scaleX(0);
   z-index: 9999;
+
+  transition: transform 0.5s ease-in-out;
  
 }
 
@@ -72,13 +74,7 @@ body {
   font-size: 3rem;;
   font-family: 'Vibur', monospace;
   color: white;
-  text-shadow: 
-  0 -40px 100px,
-  0 0 2px,
-  0 0 1em #3a80ff,
-  0 0 0.5em #1e90ff,
-  0 0 0.1em #007fff,
-  0 5px 3px #000;
+  
 
 }
 
@@ -223,6 +219,38 @@ body {
       0 0 40px rgb(73, 32, 255),
       0 0 80px rgb(47, 0, 255),
       0 0 100px rgb(36, 0, 194);
+}
+
+.blueNeon {
+  text-shadow: 
+  0 -40px 100px,
+  0 0 2px,
+  0 0 1em #3a80ff,
+  0 0 0.5em #1e90ff,
+  0 0 0.1em #007fff,
+  0 5px 3px #000;
+}
+
+.redNeon {
+  text-shadow: 
+  0 -40px 100px,
+  0 0 2px,
+  0 0 1em #ff1a1a,
+  0 0 0.5em #e60000,
+  0 0 0.1em #cc0000,
+  0 5px 3px #000000;
+
+}
+
+.greenNeon {
+  text-shadow: 
+  0 -40px 100px,
+  0 0 2px,
+  0 0 1em #39ff14,
+  0 0 0.5em #00cc00,
+  0 0 0.1em #009900,
+  0 5px 3px #000000;
+
 }
 
 .flickerX {
