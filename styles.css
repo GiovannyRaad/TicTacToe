@@ -1,56 +1,64 @@
+
 body {
-    background-image: url('images/background.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-    margin: 0;
-    overflow: hidden;
-    width: 100%;
-    position: fixed;
+
+  display: flex;
+  flex-direction: column;
+  background-image: url('images/background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100dvh;
+  margin: 0;
+  overflow-y: hidden;
+    
+    
 }
 
 .maintitle {
-    max-width: 85vw;;
 
-    text-align: center;
-    margin: auto;
-    
-    user-select: none;
+  max-width: 85vw;;
+
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  
+  user-select: none;
 }
 
 .maintitle h1 {
-    font-size: 4rem;
+  font-size: 4rem;
 
-    font-family: "Vibur", Arial, Helvetica, sans-serif;
-    font-weight: 400;
-    color: #fee;
-    text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff8f44, 
-    0 0 0.5em #f78031, 
-    0 0 0.1em #ff6600, 
-    0 10px 3px #000;
+  font-family: "Vibur", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  color: #fee;
+  text-shadow: 0 -40px 100px, 0 0 2px, 0 0 1em #ff8f44, 
+  0 0 0.5em #f78031, 
+  0 0 0.1em #ff6600, 
+  0 10px 3px #000;
     
 }
 
 .maintitle p {
-    color: white;
-    font-size: 2rem;
-    display: none;
+  color: white;
+  font-size: 2rem;
+  display: none;
 }
 
-#game-board {
-    position: relative;
-    margin: auto;
-    overflow: hidden;
 
-    aspect-ratio: 1 / 1;
-    width: 85vw;
-    height: auto;
-    border: 2px solid white;
-    /* grid */
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-columns: repeat(3, 1fr);
+#game-board {
+  position: relative;
+  margin-left: auto;
+  margin-right: auto;
+  overflow: hidden;
+
+  aspect-ratio: 1 / 1;
+  width: 85vw;
+  height: auto;
+  border: 2px solid white;
+  /* grid */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
     
 }
 
@@ -83,63 +91,63 @@ body {
 }
 
 .cell {
-    aspect-ratio: 1 / 1;
-    background-color: rgba(0, 17, 255, 0);
-    border: 2px rgb(255, 255, 255) solid;
-    align-items: center;
-    justify-content: center;
-    display: flex;
-    overflow: hidden;
-    font-size: 6rem;
+  aspect-ratio: 1 / 1;
+  background-color: rgba(0, 17, 255, 0);
+  border: 2px rgb(255, 255, 255) solid;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  overflow: hidden;
+  font-size: 6rem;
 }
 
 .cell.neon span {
-    opacity: 0;
-    font-family: 'Roboto', sans-serif;
-    font-size: 0em; /* default 6 rem */
-    font-weight: 350;
-    color: rgb(255, 255, 255);
+  opacity: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 0em; /* default 6 rem */
+  font-weight: 350;
+  color: rgb(255, 255, 255);
 
-    transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
     
     
 }
 
 .o {
     text-shadow:
-        0 0 10px rgb(255, 93, 93),
-        0 0 20px rgb(255, 49, 49),
-        0 0 40px rgb(255, 0, 0),
-        0 0 80px rgb(255, 0, 0),
-        0 0 100px rgb(161, 0, 0);
+      0 0 10px rgb(255, 93, 93),
+      0 0 20px rgb(255, 49, 49),
+      0 0 40px rgb(255, 0, 0),
+      0 0 80px rgb(255, 0, 0),
+      0 0 100px rgb(161, 0, 0);
 }
 
 .x {
     text-shadow:
-        0 0 10px rgb(141, 115, 255),
-        0 0 20px rgb(101, 66, 255),
-        0 0 40px rgb(73, 32, 255),
-        0 0 80px rgb(47, 0, 255),
-        0 0 100px rgb(36, 0, 194);
+      0 0 10px rgb(141, 115, 255),
+      0 0 20px rgb(101, 66, 255),
+      0 0 40px rgb(73, 32, 255),
+      0 0 80px rgb(47, 0, 255),
+      0 0 100px rgb(36, 0, 194);
 }
 
 .flickerX {
-   animation: neonFlickerX 5s infinite; 
+  animation: neonFlickerX 5s infinite; 
 }
 
 .flickerO {
-   animation: neonFlickerO 5s infinite; 
+  animation: neonFlickerO 5s infinite; 
 }
 
 @keyframes neonFlickerO {
   0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
     opacity: 1;
     text-shadow: 
-        0 0 10px rgb(255, 93, 93),
-        0 0 20px rgb(255, 49, 49),
-        0 0 40px rgb(255, 0, 0),
-        0 0 80px rgb(255, 0, 0),
-        0 0 100px rgb(161, 0, 0);
+      0 0 10px rgb(255, 93, 93),
+      0 0 20px rgb(255, 49, 49),
+      0 0 40px rgb(255, 0, 0),
+      0 0 80px rgb(255, 0, 0),
+      0 0 100px rgb(161, 0, 0);
   }
   20%, 22%, 24%, 55% {
     opacity: 0.3;
@@ -151,11 +159,11 @@ body {
   0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
     opacity: 1;
     text-shadow: 
-        0 0 10px rgb(141, 115, 255),
-        0 0 20px rgb(101, 66, 255),
-        0 0 40px rgb(73, 32, 255),
-        0 0 80px rgb(47, 0, 255),
-        0 0 100px rgb(36, 0, 194);
+      0 0 10px rgb(141, 115, 255),
+      0 0 20px rgb(101, 66, 255),
+      0 0 40px rgb(73, 32, 255),
+      0 0 80px rgb(47, 0, 255),
+      0 0 100px rgb(36, 0, 194);
   }
   20%, 22%, 24%, 55% {
     opacity: 0.3;
