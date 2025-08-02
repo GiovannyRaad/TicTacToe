@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css?v2" />
+    <link rel="stylesheet" href="styles.css?v3" />
 
-    <script src="script.js?v2" defer></script>
+    <script src="script.js?v3" defer></script>
 
     <!--FONTS-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Comic+Relief:wght@400;700&family=Plaster&family=Press+Start+2P&family=Roboto:ital,wght@0,100..900;1,100..900&family=Vibur&display=swap" rel="stylesheet">
     <title>Tic Tac Toe</title>
 </head>
@@ -18,6 +19,14 @@
         <h1>Tic-Tac-Toe</h1>
         <p>By Gio</p>
     </div>
+
+    <div class="winScreen">
+            <h3 id="winText">X WINS</h3>
+            <p class="trashtalk">
+                X played 3D chess in a 2D world. O was just lost.            </p>
+            <button id="restart"><span>Rematch&nbsp;&nbsp;<i class="fa-solid fa-rotate-right"></i></span></button>
+    </div>
+    
     <div id="game-board">
         <button class="cell neon" data-index="0"><span> </span></button>
         <button class="cell neon" data-index="1"><span> </span></button>
