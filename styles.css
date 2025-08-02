@@ -91,8 +91,10 @@ body {
 }
 
 .winScreen button {
-  width: 75%;
+  position: relative;
+  width: 60%;
   font-size: 1.4rem;
+
   font-family: 'monospace', sans-serif;
   font-weight: bold;
   background-color: rgb(58, 0, 165);
@@ -102,6 +104,38 @@ body {
   padding: 3%;
   margin-top: auto;
   margin-bottom: 10%;
+
+  transition: all 0.3s ease-in-out;
+
+}
+
+.winScreen button::before{
+  content: "";
+
+  position: absolute;
+  width: 60%;
+  height: 60%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  background-color: transparent;
+  border: 2px solid white;
+  border-radius: 10px;
+  opacity: 100%;
+  transition: all 0.5s ease;
+  z-index: -1;
+}
+
+.winScreen button:hover {
+  background-color: aliceblue;
+  color: black;
+}
+
+.winScreen button:hover::before {
+  width: 150%;
+  height: 150%;
+  opacity: 0%;
 
 }
 
