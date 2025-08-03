@@ -109,6 +109,7 @@ function winCheck(){
     }
     if (!grid.includes(9) && !gameEnd){
         winner = 2;
+        trashTalk(winner);
         endGame(winner);
     }
 }
