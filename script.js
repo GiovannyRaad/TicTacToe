@@ -177,8 +177,17 @@ function restart(){
         span.style.fontSize = "0em";
     }
 
+    /* restore line to default position */
     line.style.height = "0%";
+    line.style.top = "0";
+    line.style.left = "0";
+    line.style.right = "0";
     winScreen.style.transform = 'translate(-50%, -50%) scaleX(0)';
+
+    /* reset win text */
+    winText.classList.remove("redNeon");
+    winText.classList.remove("blueNeon");
+    winText.classList.remove("greenNeon");
 
     /* reactivate cells click checker */
     cells.forEach(cell => {
