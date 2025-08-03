@@ -37,12 +37,12 @@ function handleClick(event){
     const cell = event.target; /* actual dom element */
     const index = cell.dataset.index; /* gets value of data-index */
     if (grid[index] == 9){
-        resetFlicker();
-        prev_cell = cell;
-        grid[index] = turn;
-        draw(cell, turn);
-        turn = (turn + 1) % 2;
-        winCheck();
+        resetFlicker(); /* remove flicker of previous X or O */
+        prev_cell = cell; /* updates previous cell to current one */
+        grid[index] = turn; /* puts 1 or 0 in the array depending on the turn */
+        draw(cell, turn); /* draws x or o on the board */
+        turn = (turn + 1) % 2; /* changes the turn */
+        winCheck(); /* checks for winner */
 
     }
 }
@@ -83,7 +83,7 @@ function winCheck(){
         }
         pattern++;
     }
-    if (!grid.includes(9)){
+    if (!grid.includes(9) && !winner){
         winner = 2;
         endGame(winner);
     }
