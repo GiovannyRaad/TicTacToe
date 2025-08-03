@@ -1,0 +1,57 @@
+{
+  "X": [
+    "X marks the spot... where O got buried.",
+    "O just got crossed out.",
+    "O’s strategy? More like ‘Oh no.’",
+    "O tried to circle around, but got boxed in.",
+    "That wasn’t a game; that was an X-pedition.",
+    "Better luck next time, O—maybe try tic-tac-no?",
+    "X left O with more holes than Swiss cheese.",
+    "X just put the ‘X’ in executioner."
+  ],
+  "O": [
+    "O circled the drain, and X fell right in.",
+    "O brought the ‘Omg’ moment of the match.",
+    "O’s win? It’s the circle of life.",
+    "O put the ‘O’ in ‘overwhelming’."
+  ],
+  "neutral": [
+    "winner didn’t just switch off the lights — it pulled the plug on loser’s hopes.",
+    "winner didn’t just win, it wrote the book on victory.",
+    "winner came, saw, and conquered your sorry loser.",
+    "winner is the hero of this story, loser’s the sad footnote.",
+    "loser folded faster than a cheap lawn chair.",
+    "When winner talks, loser listens... to defeat.",
+    "loser thought it was a game, winner made it a massacre.",
+    "winner played 3D chess in a 2D world. loser was just lost.",
+    "loser’s moves were so weak, even my grandma could counter. sorry grandma.",
+    "loser should’ve brought a map—got lost on the board.",
+    "loser's ego is bigger than their chance of winning.",
+    "winner’s moves were poetry; loser’s were scribbles.",
+    "loser forgot tic-tac-toe isn’t tic-tac-try.",
+    "winner wasn’t just winning, it was rewriting history.",
+    "loser’s plans evaporated faster than his grades.",
+    "loser's best move was conceding early.",
+    "If losing was an art, you just painted a masterpiece.",
+    "Next time, try not to embarrass yourself so hard.",
+    "winner’s win was so savage, loser’s pride took a permanent vacation.",
+    "loser was playing checkers in tic-tac-toe"
+  ],
+  "draw": [
+    "You call that a game? I call it a warm-up.",
+    "I’ve seen better strategy in a kindergarten sandbox.",
+    "Did you mean to play or just take a nap?",
+    "I’ve seen sloths move faster and smarter.",
+    "Is that all? I was expecting a fight, not a nap.",
+    "Was that a strategy or just random scribbling?",
+    "You must’ve been playing with your eyes closed.",
+    "That was less ‘play to win’ and more ‘pray to win.’",
+    "Neither of you deserved to win anyway",
+    "A draw? The only thing more disappointing than your moves.",
+    "You fought hard for nothing. Impressive commitment to failure.",
+    "Tie game—proof that two wrongs don’t make a right.",
+    "Tie? More like a mutual agreement to avoid shame.",
+    "You both kept it safe... and boring.",
+    "Two players, one board, zero winners. Perfect."
+  ]
+}

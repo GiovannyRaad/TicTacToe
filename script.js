@@ -1,8 +1,14 @@
+
+/* variables */
 let grid = new Array(9).fill(9); /* creates and fills the game board with 9s */
 let turn = 1; /* 1 = x and 0 = O */
 let winner;
 let running = true;
+let prev_cell;
+let trashtalk;
 
+/* constants */
+const endSentence = document.querySelector(".trashtalk");
 const cells = document.querySelectorAll(".cell");
 const winScreen = document.querySelector(".winScreen");
 const winCon = [
@@ -17,7 +23,17 @@ const winCon = [
 ];
 const line = document.querySelector(".line");
 
-let prev_cell;
+/* loading trashtalk lines from json */
+fetch("trashtalk.json")
+    .then(response => {
+        if (!response.ok) throw new Error("failed to load JSON");
+        return response.json();
+     })
+        .then(data => {
+            trashtalk = data;
+        });
+
+
 
 /* cells click checker */
 cells.forEach(cell => {
@@ -27,7 +43,8 @@ cells.forEach(cell => {
 /* restart button click checker */
 document.getElementById("restart").addEventListener("click", restart);
 
-function resetFlicker(){ /* stops the flicker animation of the previous cell */
+function resetFlicker(){ 
+/* stops the flicker animation of the previous cell */
     if (prev_cell){
         prev_cell.querySelector("span").classList.remove("flickerX");
         prev_cell.querySelector("span").classList.remove("flickerO");
@@ -47,7 +64,8 @@ function handleClick(event){
     }
 }
 
-function draw(cell, turn){
+function draw(cell, turn){ 
+/* draws X and O on the board */
     const span = cell.querySelector("span"); /* gets the X or 0 inside the cell */
     if (turn == 1) {
         span.textContent = "X";
@@ -69,16 +87,19 @@ function draw(cell, turn){
 }
 
 function winCheck(){
+/* checks for winner */
     let pattern = 1;
     for (const con of winCon){
         const result = grid[con[0]] + grid[con[1]] + grid[con[2]]; /* if = 0, O wins, if = 3, X wins */
         if (result == 0){
             winner = 0;
             drawWinLine(pattern);
+            trashTalk(winner);
             endGame(winner);
         } else if (result == 3){
             winner = 1;
             drawWinLine(pattern);
+            trashTalk(winner);
             endGame(winner);
         }
         pattern++;
@@ -90,6 +111,7 @@ function winCheck(){
 }
 
 function drawWinLine(pattern){ /* change rotation and location of line */
+/* takes pattern number and draws the corresponding win line */
     switch (pattern) {
         
         case 1:
@@ -138,6 +160,7 @@ function drawWinLine(pattern){ /* change rotation and location of line */
 }
 
 function endGame(win){
+/* takes the winner int and displays the end screen */
     const winText = document.getElementById('winText');
     cells.forEach(cell => {
         cell.removeEventListener("click", handleClick);
@@ -162,6 +185,7 @@ function endGame(win){
 }
 
 function restart(){
+/* handles reseting values to their default to restart the game */
     resetFlicker();
     winner = null;
     turn = (turn + 1) % 2;
@@ -194,4 +218,36 @@ function restart(){
         cell.addEventListener("click", handleClick);
     });
 
+}
+
+function trashTalk(win){
+/* takes the winner status int and displays corresponding random trashtalk */
+    let choice = Math.random();
+    let sentence;
+    let winnerStr;
+    let loserStr;
+    if (win == 2) { /* draw trashtalk */
+        if (choice > 0.5) {
+            let index = Math.floor(Math.random() * trashtalk.draw.length);
+            sentence = trashtalk.draw[index];
+            endSentence.textContent = sentence;
+        } else {
+            endSentence.textContent = ":)";
+        }
+    } else { /* win trashtalk */
+        if (win == 0) {winnerStr = "O"; loserStr = "X"} 
+        else {winnerStr = "X"; loserStr = "O"};
+
+        if (choice <= 0.35) { /* unique win line */
+            let index = Math.floor(Math.random() * trashtalk[winnerStr].length);
+            sentence = trashtalk[winnerStr][index];
+            endSentence.textContent = sentence;
+        } else { /* normal win line */
+            let index = Math.floor(Math.random() * trashtalk.neutral.length);
+            sentence = trashtalk.neutral[index];
+            sentence = sentence.replace("winner", winnerStr);
+            sentence = sentence.replace("loser", loserStr);
+            endSentence.textContent = sentence;
+        }
+    }
 }
