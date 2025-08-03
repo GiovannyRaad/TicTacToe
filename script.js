@@ -190,39 +190,45 @@ function endGame(win){
 
 function restart(){
 /* handles reseting values to their default to restart the game */
-    resetFlicker();
-    winner = null;
-    gameEnd = false;
-    grid.fill(9);
 
-    /* restore cell properties to default */
-    for (cell of cells){
-        let span = cell.querySelector("span");
-        span.textContent = "";
-        span.classList.remove("x");
-        span.classList.remove("o");
-        span.style.opacity = 0;
-        span.style.fontSize = "0em";
-    }
+    document.getElementById("restart").disabled = true;
+    setTimeout(() => {
+        document.getElementById("restart").disabled = false;
+        resetFlicker();
+        winner = null;
+        gameEnd = false;
+        grid.fill(9);
 
-    /* restore line to default position */
-    line.style.height = "0%";
-    line.style.top = "0";
-    line.style.left = "0";
-    line.style.right = "0";
-    line.style.bottom = "0";
-    winScreen.style.transform = 'translate(-50%, -50%) scaleX(0)';
+        /* restore cell properties to default */
+        for (cell of cells){
+            let span = cell.querySelector("span");
+            span.textContent = "";
+            span.classList.remove("x");
+            span.classList.remove("o");
+            span.style.opacity = 0;
+            span.style.fontSize = "0em";
+        }
 
-    /* reset win text */
-    winText.classList.remove("redNeon");
-    winText.classList.remove("blueNeon");
-    winText.classList.remove("greenNeon");
+        /* restore line to default position */
+        line.style.height = "0%";
+        line.style.top = "0";
+        line.style.left = "0";
+        line.style.right = "0";
+        line.style.bottom = "0";
+        winScreen.style.transform = 'translate(-50%, -50%) scaleX(0)';
 
-    /* reactivate cells click checker */
-    cells.forEach(cell => {
-        cell.addEventListener("click", handleClick);
-    });
+        /* reset win text */
+        winText.classList.remove("redNeon");
+        winText.classList.remove("blueNeon");
+        winText.classList.remove("greenNeon");
 
+        /* reactivate cells click checker */
+        cells.forEach(cell => {
+            cell.addEventListener("click", handleClick);
+        });
+
+    }, 1000)
+    
 }
 
 function trashTalk(win){
