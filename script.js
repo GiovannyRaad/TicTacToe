@@ -19,12 +19,13 @@ const line = document.querySelector(".line");
 
 let prev_cell;
 
-
+/* cells click checker */
 cells.forEach(cell => {
     cell.addEventListener("click", handleClick);
 });
 
-
+/* restart button click checker */
+document.getElementById("restart").addEventListener("click", restart);
 
 function resetFlicker(){ /* stops the flicker animation of the previous cell */
     if (prev_cell){
@@ -158,4 +159,30 @@ function endGame(win){
             winText.classList.add("greenNeon");
     }
     winScreen.style.transform = 'translate(-50%, -50%) scaleX(1)';
+}
+
+function restart(){
+    resetFlicker();
+    winner = null;
+    turn = (turn + 1) % 2;
+    grid.fill(9);
+
+    /* restore cell properties to default */
+    for (cell of cells){
+        let span = cell.querySelector("span");
+        span.textContent = "";
+        span.classList.remove("x");
+        span.classList.remove("o");
+        span.style.opacity = 0;
+        span.style.fontSize = "0em";
+    }
+
+    line.style.height = "0%";
+    winScreen.style.transform = 'translate(-50%, -50%) scaleX(0)';
+
+    /* reactivate cells click checker */
+    cells.forEach(cell => {
+        cell.addEventListener("click", handleClick);
+    });
+
 }
