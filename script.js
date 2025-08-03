@@ -6,6 +6,7 @@ let winner;
 let running = true;
 let prev_cell;
 let trashtalk;
+let gameEnd = false;
 
 /* constants */
 const endSentence = document.querySelector(".trashtalk");
@@ -93,18 +94,20 @@ function winCheck(){
         const result = grid[con[0]] + grid[con[1]] + grid[con[2]]; /* if = 0, O wins, if = 3, X wins */
         if (result == 0){
             winner = 0;
+            gameEnd = true;
             drawWinLine(pattern);
             trashTalk(winner);
             endGame(winner);
         } else if (result == 3){
             winner = 1;
+            gameEnd = true;
             drawWinLine(pattern);
             trashTalk(winner);
             endGame(winner);
         }
         pattern++;
     }
-    if (!grid.includes(9) && !winner){
+    if (!grid.includes(9) && !gameEnd){
         winner = 2;
         endGame(winner);
     }
@@ -188,7 +191,7 @@ function restart(){
 /* handles reseting values to their default to restart the game */
     resetFlicker();
     winner = null;
-    turn = (turn + 1) % 2;
+    gameEnd = false;
     grid.fill(9);
 
     /* restore cell properties to default */
@@ -206,6 +209,7 @@ function restart(){
     line.style.top = "0";
     line.style.left = "0";
     line.style.right = "0";
+    line.style.bottom = "0";
     winScreen.style.transform = 'translate(-50%, -50%) scaleX(0)';
 
     /* reset win text */
